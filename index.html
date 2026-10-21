@@ -42,6 +42,7 @@ p{text-wrap:pretty}
 .label{display:block;direction:ltr;font-size:11px;font-weight:400;letter-spacing:.34em;text-transform:uppercase;color:var(--clay-d);margin-bottom:18px}
 .label{text-align:right}
 .center,.label.center,.head .label,.intro .label{text-align:center}
+.pain .head .label{text-align:right}
 .lead{font-size:clamp(17px,1.4vw,19px);max-width:44ch}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 30px;border-radius:999px;font-size:15px;font-weight:400;letter-spacing:.02em;transition:background .4s var(--ease),color .4s,transform .4s var(--ease),box-shadow .4s}
@@ -81,6 +82,10 @@ p{text-wrap:pretty}
 .frame{position:absolute;z-index:2;overflow:hidden;will-change:top,left,width,height,border-radius;box-shadow:0 30px 60px -30px rgba(59,42,28,.35)}
 .frame img{position:absolute;inset:0;object-position:50% 62%;transform:scale(1.08);transition:transform 2.6s var(--ease)}
 .frame.ready img{transform:scale(1)}
+.frame-line{position:absolute;z-index:1;border:1px solid rgba(185,138,97,.55);pointer-events:none;will-change:top,left,width,height,opacity}
+.float img{animation:bob 7s ease-in-out infinite alternate}
+.f2 img{animation-delay:-3.5s}
+@keyframes bob{from{transform:translateY(0)}to{transform:translateY(-12px)}}
 .frame::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(42,28,18,.5),transparent 20%),linear-gradient(to top,rgba(42,28,18,.8),rgba(42,28,18,.12) 55%,transparent);opacity:var(--o,0)}
 .float{position:absolute;z-index:1;overflow:hidden;will-change:transform,opacity}
 .float img{height:auto;aspect-ratio:3/4}
@@ -103,14 +108,18 @@ p{text-wrap:pretty}
 .manifesto p{font-size:clamp(28px,3.8vw,56px);font-weight:200;line-height:1.5;color:var(--cocoa);max-width:20ch;margin:0 auto}
 .pill{display:inline-block;width:2em;height:1em;border-radius:999px;overflow:hidden;vertical-align:-.12em;margin:0 .08em}
 .pill.r{width:1em}
+.manifesto .w{opacity:.18;transition:opacity .5s var(--ease)}
+.manifesto .w.on{opacity:1}
+.manifesto .pill{transform:scale(.4);opacity:.3;transition:transform .9s var(--ease),opacity .6s}
+.manifesto .pill.on{transform:none;opacity:1}
 .manifesto .sig{margin-top:34px;font-size:14px;color:var(--soft)}
 
 /* pain */
 .pain{padding:0 0 var(--sec)}
 .pain .head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:40px}
-.pain .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,56px);align-items:stretch}
+.pain .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,72px);align-items:center}
 .cards{display:flex;flex-direction:column;border-top:1px solid var(--line)}
-.pc{text-align:right;display:flex;align-items:center;gap:18px;padding:20px 18px;border-bottom:1px solid var(--line);transition:background .4s,color .4s,padding .4s var(--ease)}
+.pc{text-align:right;display:flex;align-items:center;gap:18px;padding:24px 18px;border-bottom:1px solid var(--line);transition:background .4s,color .4s,padding .4s var(--ease)}
 .pc:hover{background:var(--latte)}
 .pc .num{font-size:12px;letter-spacing:.12em;color:var(--clay-d);direction:ltr;flex:none;width:22px}
 .pc span.t{flex:1;font-size:clamp(17px,1.5vw,20px);font-weight:300;line-height:1.5;color:var(--cocoa)}
@@ -119,7 +128,7 @@ p{text-wrap:pretty}
 .pc[aria-pressed="true"]{margin:4px 0;background:var(--latte);padding-right:26px;border-radius:14px;border-bottom-color:transparent}
 .pc[aria-pressed="true"] .box{background:var(--cocoa);border-color:var(--cocoa);color:var(--cream)}
 .pc[aria-pressed="true"] .box svg{opacity:1}
-.pphoto{position:relative;border-radius:999px 999px 24px 24px;overflow:hidden;min-height:560px;background:var(--sand)}
+.pphoto{position:relative;border-radius:999px 999px 24px 24px;overflow:hidden;aspect-ratio:4/5.3;background:var(--sand)}
 .pphoto img{position:absolute;inset:0;transition:opacity .9s var(--ease),transform 1.6s var(--ease)}
 .pphoto img.hide{opacity:0;transform:scale(1.05)}
 .pphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(42,28,18,.85) 0%,rgba(42,28,18,.2) 50%,transparent 70%)}
@@ -136,11 +145,11 @@ p{text-wrap:pretty}
 .about .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,110px);align-items:center}
 .collage{position:relative;aspect-ratio:1/1.08}
 .collage figure{position:absolute;overflow:hidden}
-.collage .c1{width:62%;aspect-ratio:4/5;top:6%;right:0;border-radius:999px 999px 18px 18px}
-.collage .c2{width:38%;aspect-ratio:3/4;top:0;left:4%;border-radius:16px}
-.collage .c3{width:42%;aspect-ratio:1/1;bottom:0;left:16%;border-radius:50%;border:8px solid var(--latte)}
+.collage .c1{width:64%;aspect-ratio:4/5.2;top:0;right:4%;border-radius:999px 999px 18px 18px}
+.collage .c2{width:40%;aspect-ratio:3/4;bottom:0;left:0;border-radius:16px;border:8px solid var(--latte);z-index:2}
+.collage .c3{width:26%;aspect-ratio:1/1;top:10%;left:8%;border-radius:50%;border:6px solid var(--latte);z-index:2}
 .collage .cap{position:absolute;font-size:11px;letter-spacing:.3em;color:var(--soft);direction:ltr}
-.collage .k1{bottom:6%;right:2%}.collage .k2{top:44%;left:4%}
+.collage .k1{bottom:2%;right:4%}.collage .k2{top:44%;left:4%}
 .about h2{margin-bottom:22px}
 .about p{margin-bottom:14px;max-width:48ch}
 .creds{list-style:none;margin-top:26px;border-top:1px solid var(--line)}
@@ -154,10 +163,10 @@ p{text-wrap:pretty}
 .treat .head p{margin:14px auto 0}
 .arches{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
 .ar{display:block;text-align:center}
-.ar .ph{aspect-ratio:3/4.4;border-radius:999px 999px 16px 16px;overflow:hidden;margin-bottom:18px}
+.ar .ph{aspect-ratio:3/4.1;border-radius:999px 999px 16px 16px;overflow:hidden;margin-bottom:18px}
 .ar .ph img{transition:transform 1.4s var(--ease)}
 .ar:hover .ph img{transform:scale(1.06)}
-.ar:nth-child(even){margin-top:46px}
+.ar:nth-child(even){margin-top:28px}
 .ar h3{font-size:24px;font-weight:300}
 .ar .for{display:block;font-size:14px;color:var(--clay-d);margin:4px 0 8px}
 .ar p{font-size:14px;line-height:1.7}
@@ -169,7 +178,8 @@ p{text-wrap:pretty}
 .cup{background:var(--deep);color:rgba(251,248,243,.78)}
 .cup .grid{display:grid;grid-template-columns:1fr 1fr;min-height:90vh}
 .cup .img{position:relative;overflow:hidden;min-height:520px}
-.cup .img img{position:absolute;inset:0}
+.cup .img img{position:absolute;inset:0;clip-path:inset(10% 16% 0 16% round 999px 999px 0 0);transform:scale(1.1);transition:clip-path 1.8s var(--ease),transform 2.2s var(--ease)}
+.cup .img.in img{clip-path:inset(0 0 0 0 round 0);transform:none}
 .cup .page{padding:clamp(56px,7vw,110px) var(--pad);display:flex;flex-direction:column;justify-content:center}
 .cup .page>*{max-width:520px}
 .cup h2{color:var(--cream);margin-bottom:20px}
@@ -183,19 +193,25 @@ p{text-wrap:pretty}
 .ritual{padding:var(--sec) 0}
 .ritual .head{text-align:center;margin-bottom:50px}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative}
-.steps::before{content:"";position:absolute;top:24px;right:12%;left:12%;height:1px;background:rgba(59,42,28,.2)}
+.steps::before{content:"";position:absolute;top:24px;right:12%;left:12%;height:1px;background:var(--clay);opacity:.5;transform:scaleX(0);transform-origin:right;transition:transform 2.4s var(--ease) .2s}
+.steps.in::before{transform:scaleX(1)}
+.step .n{transition:background .6s,color .6s,border-color .6s}
+.steps.in .step .n{background:var(--cocoa);color:var(--cream);border-color:var(--cocoa)}
+.steps.in .step:nth-child(2) .n{transition-delay:.7s}.steps.in .step:nth-child(3) .n{transition-delay:1.3s}.steps.in .step:nth-child(4) .n{transition-delay:1.9s}
 .step{text-align:center;position:relative}
 .step .n{width:48px;height:48px;border-radius:50%;background:var(--paper);border:1px solid rgba(59,42,28,.3);display:grid;place-items:center;margin:0 auto 18px;font-size:13px;letter-spacing:.1em;color:var(--cocoa);direction:ltr}
 .step h3{font-size:22px;font-weight:300;margin-bottom:6px}
 .step p{font-size:15px;max-width:24ch;margin:0 auto}
 
 /* gallery */
-.gallery{padding:0 0 var(--sec)}
+.gallery{padding:calc(var(--sec) * .35) 0 calc(var(--sec) * 1.1)}
 .gallery .head{text-align:center;margin-bottom:44px}
-.masonry{columns:4 230px;column-gap:14px}
-.masonry figure{break-inside:avoid;margin-bottom:14px;border-radius:18px;overflow:hidden}
-.masonry figure:nth-child(3n+1){aspect-ratio:3/4}.masonry figure:nth-child(3n+2){aspect-ratio:4/5}.masonry figure:nth-child(3n){aspect-ratio:2/3}
-.masonry figure:nth-child(4n+1){border-radius:999px 999px 18px 18px}.masonry figure:nth-child(4n+3){border-radius:18px 18px 120px 18px}
+.masonry{display:flex;gap:14px;align-items:flex-start}
+.mcol{flex:1;display:flex;flex-direction:column;gap:14px;will-change:transform}
+.mcol:nth-child(even){margin-top:70px}
+.masonry figure{border-radius:18px;overflow:hidden}
+.masonry figure.a{border-radius:999px 999px 18px 18px}
+.masonry figure.b{border-radius:18px 18px 110px 18px}
 .masonry img{transition:transform 1.6s var(--ease)}
 .masonry figure:hover img{transform:scale(1.04)}
 
@@ -260,7 +276,7 @@ footer img{height:26px;width:auto}
   .f1,.f2{display:none}
   .pain .head{grid-template-columns:1fr;gap:12px}
   .pain .grid,.about .grid,.cup .grid,.gift .grid,.faq .grid{grid-template-columns:1fr}
-  .pphoto{min-height:460px}
+  .pphoto{aspect-ratio:4/4.6;max-width:520px;width:100%;margin:0 auto}
   .arches{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:0 calc(var(--pad) * -1);padding:0 var(--pad) 10px;scrollbar-width:none}
   .arches::-webkit-scrollbar{display:none}
   .ar{flex:0 0 62vw;max-width:280px;scroll-snap-align:center}
@@ -282,11 +298,10 @@ footer img{height:26px;width:auto}
   .manifesto p{max-width:16ch}
   .pc{padding:16px 10px;gap:12px}
   .pc[aria-pressed="true"]{padding-right:16px}
-  .pphoto{min-height:420px}
   .pans{padding:22px}
-  .masonry{columns:2;column-gap:10px}
-  .masonry figure{margin-bottom:10px}
-  .masonry figure:nth-child(4n+3){border-radius:14px 14px 70px 14px}
+  .masonry,.mcol{gap:10px}
+  .mcol:nth-child(even){margin-top:40px}
+  .masonry figure.b{border-radius:14px 14px 70px 14px}
   .giftvis{margin-bottom:40px}
   .final .ctas .btn{width:100%}
   .wa{left:14px;bottom:14px}
@@ -320,6 +335,7 @@ footer img{height:26px;width:auto}
     </div>
     <figure class="float f1" id="f1"><img src="img/b-128.jpg" alt="" loading="eager"><figcaption>01 · Shiatsu</figcaption></figure>
     <figure class="float f2" id="f2"><img src="img/cup-2.jpg" alt="" loading="eager"><figcaption>02 · Cupping</figcaption></figure>
+    <div class="frame-line" id="fline"></div>
     <div class="frame" id="frame"><img src="img/b-145.jpg" alt="גאיה מטפלת בעדינות בראש של מטופלת" fetchpriority="high"></div>
     <div class="over" id="over">
       <h2>רגע של שקט,<br>בידיים שמקשיבות.</h2>
@@ -337,7 +353,7 @@ footer img{height:26px;width:auto}
 <section class="manifesto">
   <div class="wrap">
     <span class="label center rv">The studio</span>
-    <p class="rv d1">מקום שקט <span class="pill"><img src="img/room.jpg" alt=""></span> לנשים בלבד, שבו מגע <span class="pill r"><img src="img/g-049.jpg" alt=""></span> מקשיב, והגוף <span class="pill"><img src="img/g-120.jpg" alt=""></span> נזכר איך לנשום.</p>
+    <p id="mani">מקום שקט <span class="pill"><img src="img/room.jpg" alt=""></span> לנשים בלבד, שבו מגע <span class="pill r"><img src="img/g-049.jpg" alt=""></span> מקשיב, והגוף <span class="pill"><img src="img/g-120.jpg" alt=""></span> נזכר איך לנשום.</p>
     <div class="sig rv d2">שיאצו, עיסוי וכוסות רוח · 45 דקות · מגדל העמק</div>
   </div>
 </section>
@@ -365,8 +381,8 @@ footer img{height:26px;width:auto}
   <div class="wrap grid">
     <div class="collage rv">
       <figure class="c1"><img src="img/gaya.jpg" alt="גאיה ברנדין" loading="lazy" style="object-position:50% 20%"></figure>
-      <figure class="c2"><img src="img/b-043.jpg" alt="גאיה בקליניקה" loading="lazy"></figure>
-      <figure class="c3"><img src="img/cert.jpg" alt="תעודת שיאצו, מכללת רידמן" loading="lazy"></figure>
+      <figure class="c2" data-speed=".08"><img src="img/b-043.jpg" alt="גאיה בקליניקה" loading="lazy"></figure>
+      <figure class="c3" data-speed="-.1"><img src="img/cert.jpg" alt="תעודת שיאצו, מכללת רידמן" loading="lazy"></figure>
       <span class="cap k1">GAYA BRANDIN</span>
     </div>
     <div>
@@ -397,7 +413,7 @@ footer img{height:26px;width:auto}
 
 <section class="cup" id="cupping">
   <div class="grid">
-    <div class="img"><img src="img/cup-1.jpg" alt="כוסות רוח על גב בתאורה חמה" loading="lazy"></div>
+    <div class="img" data-reveal><img src="img/cup-1.jpg" alt="כוסות רוח על גב בתאורה חמה" loading="lazy"></div>
     <div class="page">
       <span class="label rv">Cupping</span>
       <h2 class="rv d1">כוסות רוח</h2>
@@ -417,7 +433,7 @@ footer img{height:26px;width:auto}
       <span class="label rv">The ritual</span>
       <h2 class="rv d1">ארבעה צעדים קטנים אל השקט</h2>
     </div>
-    <div class="steps">
+    <div class="steps" data-reveal>
       <div class="step rv"><div class="n">01</div><h3>שולחת הודעה</h3><p>כותבת לי בוואטסאפ מה מרגיש לך עמוס, ונמצא יחד זמן שנוח לך.</p></div>
       <div class="step rv d1"><div class="n">02</div><h3>מגיעה ונושמת</h3><p>חדר חמים, אור רך ושקט. מכאן הקצב כבר אחר.</p></div>
       <div class="step rv d2"><div class="n">03</div><h3>משחררת</h3><p>45 דקות של מגע ונשימה, בעוצמה שמתאימה לך.</p></div>
@@ -586,7 +602,7 @@ document.querySelectorAll('#who button').forEach(b=>b.onclick=()=>{
 giftBtn.href=wa('היי גאיה, אשמח להזמין שובר מתנה לאמא');
 
 /* hero: arch opens into full screen */
-const hero=document.getElementById('hero'),frame=document.getElementById('frame'),intro=document.getElementById('intro'),over=document.getElementById('over'),f1=document.getElementById('f1'),f2=document.getElementById('f2'),nav=document.getElementById('nav'),waBtn=document.getElementById('wa');
+const hero=document.getElementById('hero'),frame=document.getElementById('frame'),intro=document.getElementById('intro'),over=document.getElementById('over'),f1=document.getElementById('f1'),f2=document.getElementById('f2'),fline=document.getElementById('fline'),nav=document.getElementById('nav'),waBtn=document.getElementById('wa');
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const lerp=(a,b,t)=>a+(b-a)*t, clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
 const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
@@ -599,6 +615,8 @@ function heroFrame(){
   const w=lerp(w0,vw,e),h=lerp(h0,vh,e),t=lerp(top0,0,e),r=lerp(w0/2,0,e);
   Object.assign(frame.style,{width:w+'px',height:h+'px',top:t+'px',left:(vw-w)/2+'px',borderRadius:r+'px '+r+'px '+lerp(16,0,e)+'px '+lerp(16,0,e)+'px'});
   frame.style.setProperty('--o',clamp((p-.45)/.4));
+  const g=mob?10:16;
+  Object.assign(fline.style,{width:(w+g*2)+'px',height:(h+g)+'px',top:(t-g)+'px',left:((vw-w)/2-g)+'px',borderRadius:(r+g)+'px '+(r+g)+'px '+lerp(22,0,e)+'px '+lerp(22,0,e)+'px',opacity:1-clamp(p*2.5)});
   intro.style.opacity=1-clamp(p*2.2);intro.style.transform='translateY('+(-p*60)+'px)';
   f1.style.transform='translate('+(p*-12)+'vw,'+(-p*30)+'vh)';f1.style.opacity=1-clamp(p*1.8);
   f2.style.transform='translate('+(p*12)+'vw,'+(p*20)+'vh)';f2.style.opacity=1-clamp(p*1.8);
@@ -615,8 +633,31 @@ addEventListener('resize',heroFrame);
 heroFrame();
 requestAnimationFrame(()=>frame.classList.add('ready'));
 
+/* manifesto words */
+const mani=document.getElementById('mani');
+[...mani.childNodes].forEach(n=>{if(n.nodeType===3){const f=document.createDocumentFragment();n.textContent.split(/(\s+)/).forEach(t=>{if(!t)return;if(/^\s+$/.test(t)){f.appendChild(document.createTextNode(t))}else{const sp=document.createElement('span');sp.className='w';sp.textContent=t;f.appendChild(sp)}});mani.replaceChild(f,n)}});
+const mParts=[...mani.querySelectorAll('.w,.pill')];
+function maniTick(){const r=mani.getBoundingClientRect(),vh=innerHeight;const p=reduce?1:clamp((vh*.85-r.top)/(r.height+vh*.35));const k=Math.round(p*mParts.length);mParts.forEach((el,i)=>el.classList.toggle('on',i<k))}
+
+/* gallery columns */
+const mas=document.querySelector('.masonry'),figs=[...mas.querySelectorAll('figure')];
+const ratios=['3/4','1/1','4/5','2/3','4/5','3/4','2/3','1/1','3/4','4/5','1/1','2/3'];
+figs.forEach((f,i)=>{f.style.aspectRatio=ratios[i%ratios.length];if(i%5===0)f.classList.add('a');if(i%5===3)f.classList.add('b')});
+let cols=0;
+function buildCols(){const n=innerWidth<700?2:4;if(n===cols)return;cols=n;mas.innerHTML='';const cs=[...Array(n)].map(()=>{const c=document.createElement('div');c.className='mcol';mas.appendChild(c);return c});figs.forEach((f,i)=>cs[i%n].appendChild(f))}
+buildCols();addEventListener('resize',buildCols);
+
+/* parallax */
+const speeds=[0,.07,-.04,.1];
+function parallax(){if(reduce)return;const vh=innerHeight;
+  mas.querySelectorAll('.mcol').forEach((c,i)=>{const r=mas.getBoundingClientRect();const d=(r.top+r.height/2-vh/2);c.style.transform='translateY('+Math.max(-60,Math.min(60,-d*speeds[i%4]))+'px)'});
+  document.querySelectorAll('[data-speed]').forEach(el=>{const r=el.parentElement.getBoundingClientRect();const d=(r.top+r.height/2-vh/2);el.style.transform='translateY('+(-d*parseFloat(el.dataset.speed))+'px)'});
+}
+addEventListener('scroll',()=>requestAnimationFrame(()=>{maniTick();parallax()}),{passive:true});
+maniTick();parallax();
+
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -5% 0px'});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+document.querySelectorAll('.rv,[data-reveal]').forEach(el=>io.observe(el));
 </script>
 </body>
 </html>
