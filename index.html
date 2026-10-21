@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>gaya | טיפולי מגע לנשים, מגדל העמק</title>
+<meta name="description" content="קליניקה לטיפולי מגע לנשים בלבד במגדל העמק. שיאצו, עיסוי שוודי, עיסוי הריון, עיסוי רפואי משולב וכוסות רוח עם גאיה ברנדין.">
+<meta name="theme-color" content="#2A1C12">
+<link rel="icon" href="img/logo-brown.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#2A1C12;
+  --night:#33241A;
+  --cream:#F6F1EA;
+  --paper:#FBF8F3;
+  --latte:#EEE5DA;
+  --light:#D9A570;
+  --clay-d:#A97A52;
+  --cocoa:#3B2A1C;
+  --text:#5E4D3E;
+  --soft:#8E7C6B;
+  --line:rgba(59,42,28,.13);
+  --line-d:rgba(246,241,234,.14);
+  --font:"IBM Plex Sans Hebrew", system-ui, sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --pad:clamp(20px,5vw,72px);
+  --sec:clamp(64px,8vw,112px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--text);font-family:var(--font);font-size:17px;line-height:1.8;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+h1,h2,h3{color:var(--cocoa);font-weight:200;line-height:1.12;letter-spacing:-.01em;text-wrap:balance}
+h2{font-size:clamp(34px,4.4vw,62px)}
+b,strong{font-weight:500}
+p{text-wrap:pretty}
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--pad)}
+.label{display:block;direction:ltr;font-size:11px;font-weight:400;letter-spacing:.34em;text-transform:uppercase;color:var(--clay-d);margin-bottom:18px}
+[dir=rtl] .label{text-align:right}
+.lead{font-size:clamp(17px,1.4vw,19px);max-width:44ch}
+.dark{background:var(--black);color:rgba(246,241,234,.78)}
+.dark h1,.dark h2,.dark h3{color:var(--cream)}
+.dark .label{color:var(--light)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 30px;border-radius:999px;font-size:15px;font-weight:400;letter-spacing:.02em;transition:background .4s var(--ease),color .4s,transform .4s var(--ease),box-shadow .4s}
+.btn svg{width:17px;height:17px}
+.btn:hover{transform:translateY(-2px)}
+.btn-main{background:var(--cocoa);color:var(--cream)}
+.btn-main:hover{box-shadow:0 14px 30px -12px rgba(59,42,28,.6)}
+.btn-cream{background:var(--cream);color:var(--black)}
+.btn-cream:hover{box-shadow:0 0 0 8px rgba(246,241,234,.08)}
+.btn-line{border:1px solid currentColor;padding:15px 28px}
+.dark .btn-line{color:var(--cream);border-color:rgba(246,241,234,.4)}
+.btn-line:hover{background:rgba(127,100,70,.08)}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .5s,box-shadow .5s}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:80px}
+.nav .logo{position:relative;height:34px;width:80px}
+.nav .logo img{position:absolute;inset:0;width:auto;height:34px;transition:opacity .4s}
+.nav .logo .lb,.nav .logo .lc{opacity:0}
+.nav ul{display:flex;gap:34px;list-style:none;font-size:14px;letter-spacing:.02em;color:rgba(246,241,234,.82);transition:color .4s}
+.nav ul a:hover{color:var(--cream)}
+.nav .btn{padding:11px 22px;font-size:14px;background:var(--cream);color:var(--black)}
+.nav.solid{background:rgba(251,248,243,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.nav.solid ul{color:var(--text)}
+.nav.solid .logo .lc{opacity:0}.nav.solid .logo .lb{opacity:1}
+.nav.solid .btn{background:var(--cocoa);color:var(--cream)}
+
+/* hero */
+.hero{position:relative;height:100svh;min-height:640px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
+.hero .ph{position:absolute;inset:0}
+.hero .ph img{position:absolute;inset:0;object-position:50% 40%}
+.hero .ph .base{animation:settle 3s var(--ease) both}
+.hero .ph .ghost{opacity:.32;filter:blur(7px);mix-blend-mode:screen;animation:ghost 9s ease-in-out infinite alternate}
+@keyframes settle{from{transform:scale(1.1)}to{transform:none}}
+@keyframes ghost{from{transform:translateX(-1.8%) scale(1.02)}to{transform:translateX(1.4%) scale(1.03)}}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 52%,rgba(42,28,18,.62),rgba(42,28,18,.35) 70%),linear-gradient(to top,rgba(42,28,18,.55),transparent 30%)}
+.hero .wrap{position:relative;z-index:2;width:100%;display:flex;flex-direction:column;align-items:center;padding-top:60px}
+.hero .label{text-align:center!important}
+.hero .lead{margin:0 auto}
+.hero h1.brand{margin-bottom:22px}
+.hero h1.brand img{width:clamp(200px,26vw,380px);height:auto;margin:0 auto 18px}
+.hero h1.brand span{display:block;font-weight:200;font-size:clamp(26px,2.8vw,40px);color:var(--cream);letter-spacing:0}
+.hero .lead{color:rgba(246,241,234,.8)}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px;justify-content:center}
+.hero .side{display:flex;gap:0;flex-wrap:wrap;justify-content:center;margin-top:40px;font-size:13px;color:rgba(246,241,234,.7)}
+.hero .side div{padding:0 16px}
+.hero .side div+div{border-right:1px solid var(--line-d)}
+.hero .side b{color:var(--cream);font-weight:400}
+
+/* pain */
+.pain{padding:var(--sec) 0}
+.pain .head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:40px}
+.pain .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,56px);align-items:stretch}
+.cards{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.pc{text-align:right;display:flex;align-items:center;gap:18px;padding:20px 18px;border-bottom:1px solid var(--line);border-radius:0;transition:background .4s,color .4s,padding .4s var(--ease)}
+.pc:hover{background:var(--latte)}
+.pc .num{font-size:12px;letter-spacing:.12em;color:var(--clay-d);direction:ltr;flex:none;width:22px}
+.pc span.t{flex:1;font-size:clamp(17px,1.5vw,20px);font-weight:300;line-height:1.5;color:var(--cocoa)}
+.pc .box{flex:none;width:26px;height:26px;border-radius:50%;border:1px solid rgba(59,42,28,.3);display:grid;place-items:center;transition:all .35s}
+.pc .box svg{width:12px;height:12px;opacity:0;transition:opacity .2s}
+.pc[aria-pressed="true"]{margin:4px 0;background:var(--black);padding-right:26px;border-radius:14px;border-bottom-color:transparent}
+.pc[aria-pressed="true"] span.t{color:var(--cream)}
+.pc[aria-pressed="true"] .num{color:var(--light)}
+.pc[aria-pressed="true"] .box{background:var(--cream);border-color:var(--cream);color:var(--black)}
+.pc[aria-pressed="true"] .box svg{opacity:1}
+.pphoto{position:relative;border-radius:24px;overflow:hidden;min-height:520px;background:var(--black)}
+.pphoto img{position:absolute;inset:0;transition:opacity .9s var(--ease),transform 1.6s var(--ease)}
+.pphoto img.hide{opacity:0;transform:scale(1.05)}
+.pphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(42,28,18,.9) 0%,rgba(42,28,18,.25) 55%,transparent 75%)}
+.pans{position:absolute;z-index:2;inset:auto 0 0 0;padding:28px 30px;color:rgba(246,241,234,.85)}
+.pans .label{color:var(--light);margin-bottom:8px}
+.pans h3{color:var(--cream);font-size:clamp(26px,2.6vw,36px);margin-bottom:6px}
+.pans p{font-size:15px;max-width:40ch}
+.pans .btn{margin-top:18px}
+.pans .swap{animation:up .7s var(--ease)}
+@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* spread (Puli) */
+.spread{display:grid;grid-template-columns:1fr 1fr;min-height:92vh}
+.spread .img{position:relative;overflow:hidden;min-height:520px}
+.spread .img img{position:absolute;inset:0;transition:transform 2.4s var(--ease)}
+.spread:hover .img img{transform:scale(1.03)}
+.spread .page{padding:clamp(48px,7vw,110px) var(--pad);display:flex;flex-direction:column;justify-content:center}
+.spread .page>*{max-width:520px}
+.spread h2{margin-bottom:22px}
+.spread p{margin-bottom:14px}
+.spread .pg{margin-top:auto;padding-top:40px;display:flex;justify-content:space-between;font-size:11px;letter-spacing:.3em;direction:ltr;color:var(--soft);max-width:none}
+.dark .pg{color:rgba(246,241,234,.4)}
+
+.reasons{display:grid;grid-template-columns:1fr 1fr;gap:26px 30px;margin-top:20px}
+.reasons h3{font-size:20px;font-weight:400;margin-bottom:4px}
+.reasons p{font-size:15px;margin:0}
+.creds{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-d);border:1px solid var(--line-d);border-radius:18px;overflow:hidden;margin-top:26px}
+.creds div{background:var(--black);padding:16px 18px}
+.creds b{display:block;color:var(--cream);font-weight:400;font-size:17px}
+.creds small{font-size:13px;color:rgba(246,241,234,.55)}
+
+/* treatments */
+.treat{padding:var(--sec) 0}
+.treat .head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:40px}
+.list{border-top:1px solid var(--line)}
+.item{display:grid;grid-template-columns:170px 1fr 1.3fr auto;gap:clamp(18px,3vw,44px);align-items:center;padding:26px 0;border-bottom:1px solid var(--line)}
+.item .thumb{aspect-ratio:4/3;border-radius:14px;overflow:hidden}
+.item .thumb img{transition:transform 1.4s var(--ease)}
+.item:hover .thumb img{transform:scale(1.07)}
+.item h3{font-size:clamp(26px,2.6vw,36px)}
+.item .for{display:block;font-size:14px;color:var(--clay-d);margin-top:8px;font-weight:400}
+.item p{font-size:16px}
+.item .go{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--cocoa);transition:all .4s var(--ease)}
+.item .go svg{width:16px;height:16px}
+.item:hover .go{background:var(--cocoa);color:var(--cream);border-color:var(--cocoa)}
+
+/* cupping facts */
+.facts{display:grid;gap:10px;margin-top:22px}
+.facts div{border:1px solid var(--line-d);border-radius:16px;padding:14px 18px;font-size:15px}
+.facts b{display:block;color:var(--cream);font-weight:400}
+.dark blockquote{font-size:clamp(22px,2vw,28px);font-weight:200;line-height:1.45;color:var(--cream);margin:16px 0 20px}
+
+/* ritual */
+.ritual{padding:var(--sec) 0;background:var(--latte)}
+.ritual .head{text-align:center;margin-bottom:50px}
+.ritual .label{text-align:center}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative}
+.steps::before{content:"";position:absolute;top:24px;right:12%;left:12%;height:1px;background:rgba(59,42,28,.22)}
+.step{text-align:center;position:relative}
+.step .n{width:48px;height:48px;border-radius:50%;background:var(--latte);border:1px solid rgba(59,42,28,.3);display:grid;place-items:center;margin:0 auto 18px;font-size:13px;letter-spacing:.1em;color:var(--cocoa);direction:ltr}
+.step h3{font-size:22px;font-weight:300;margin-bottom:6px}
+.step p{font-size:15px;max-width:24ch;margin:0 auto}
+
+/* gallery */
+.gallery{padding:var(--sec) 0}
+.gallery .head{text-align:center;margin-bottom:44px}
+.gallery .label{text-align:center}
+.masonry{columns:4 230px;column-gap:14px}
+.masonry figure{break-inside:avoid;margin-bottom:14px;border-radius:18px;overflow:hidden}
+.masonry figure:nth-child(3n+1){aspect-ratio:3/4}.masonry figure:nth-child(3n+2){aspect-ratio:4/5}.masonry figure:nth-child(3n){aspect-ratio:2/3}
+.masonry figure:nth-child(4n+1){border-radius:120px 18px 18px 18px}.masonry figure:nth-child(4n+3){border-radius:18px 18px 120px 18px}
+.masonry img{transition:transform 1.6s var(--ease)}
+.masonry figure:hover img{transform:scale(1.04)}
+
+/* gift */
+.gift{position:relative;overflow:hidden;padding:var(--sec) 0}
+.gift>img{position:absolute;inset:0;opacity:.38;filter:blur(2px)}
+.gift .wrap{position:relative;display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(30px,5vw,80px);align-items:center}
+.gift h2{margin-bottom:16px}
+.who{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 28px}
+.who button{border:1px solid rgba(246,241,234,.3);border-radius:999px;padding:8px 18px;font-size:14px;color:var(--cream);transition:all .35s}
+.who button.on,.who button:hover{background:var(--cream);color:var(--black);border-color:var(--cream)}
+.card{background:var(--paper);border-radius:16px;padding:34px 34px 30px;box-shadow:0 50px 90px -30px rgba(0,0,0,.8);transform:rotate(-4deg);max-width:400px;margin:0 auto;position:relative;transition:transform .9s var(--ease)}
+.card:hover{transform:rotate(-1deg) translateY(-6px)}
+.card::before{content:"";position:absolute;inset:10px;border:1px solid var(--line);border-radius:9px;pointer-events:none}
+.card .top{display:flex;justify-content:space-between;align-items:center}
+.card .top img{height:30px;width:auto}
+.card .top span{font-size:10px;letter-spacing:.32em;color:var(--clay-d);direction:ltr}
+.card h4{font-weight:200;font-size:42px;color:var(--cocoa);margin:28px 0 4px;line-height:1.1}
+.card .sub{font-size:14px;color:var(--soft)}
+.card .lines{margin-top:24px;display:grid;gap:14px}
+.card .lines div{display:flex;gap:10px;align-items:baseline;font-size:14px;color:var(--soft)}
+.card .lines div b{color:var(--cocoa);font-weight:400;font-size:16px}
+.card .lines div::after{content:"";flex:1;border-bottom:1px solid rgba(59,42,28,.2)}
+
+/* faq */
+.faq{padding:var(--sec) 0}
+.faq .grid{display:grid;grid-template-columns:.85fr 1.4fr;gap:clamp(30px,6vw,90px)}
+.faq h2{font-size:clamp(32px,3.4vw,46px)}
+.faq details{border-bottom:1px solid var(--line);padding:22px 0}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font-size:clamp(18px,1.6vw,21px);color:var(--cocoa);font-weight:300}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:26px;font-weight:200;line-height:1;color:var(--clay-d);transition:transform .4s var(--ease);flex:none}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin-top:10px;max-width:60ch}
+
+/* final */
+.final{position:relative;overflow:hidden;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center}
+.final>img{position:absolute;inset:0}
+.final::before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse at center,rgba(42,28,18,.55),rgba(42,28,18,.88))}
+.final .inner{position:relative;z-index:2;padding:80px 24px;max-width:760px}
+.final .label{text-align:center}
+.final h2{font-size:clamp(42px,6vw,88px);margin-bottom:18px}
+.final .lead{margin:0 auto}
+.final .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+.final .info{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin-top:40px;font-size:14px;letter-spacing:.04em}
+.final .info a{direction:ltr;display:inline-block}
+
+footer{background:var(--black);color:rgba(246,241,234,.5);font-size:13px;border-top:1px solid var(--line-d)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:24px;padding-bottom:24px;gap:16px;flex-wrap:wrap}
+footer img{height:26px;width:auto}
+
+.wa{position:fixed;left:20px;bottom:20px;z-index:60;width:56px;height:56px;border-radius:50%;background:var(--cocoa);color:var(--cream);display:grid;place-items:center;box-shadow:0 12px 30px rgba(42,28,18,.35);transition:transform .4s var(--ease),opacity .4s;opacity:0;transform:translateY(20px);pointer-events:none}
+.wa.on{opacity:1;transform:none;pointer-events:auto}
+.wa svg{width:25px;height:25px}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+@media (max-width:1000px){
+  .nav ul{display:none}
+  .hero .side{font-size:12px;flex-direction:column;gap:2px;margin-top:30px}
+  .hero .side div,.hero .side div+div{padding:0;border:0}
+  .hero .label{letter-spacing:.22em;font-size:10px}
+  .hero .lead{max-width:32ch}
+  .pain .head,.treat .head{grid-template-columns:1fr;gap:12px}
+  .pain .grid{grid-template-columns:1fr}
+  .pphoto{min-height:440px}
+  .spread,.gift .wrap,.faq .grid{grid-template-columns:1fr}
+  .spread{min-height:0}
+  .spread .img{min-height:100vw}
+  .spread.flip .img{order:-1}
+  .spread .pg{display:none}
+  .item{grid-template-columns:110px 1fr auto;row-gap:8px}
+  .item .thumb{grid-row:1/3}
+  .item p{grid-column:2/4}
+  .steps{grid-template-columns:1fr 1fr;row-gap:36px}
+  .steps::before{display:none}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .nav .wrap{height:66px}
+  .nav .btn{padding:9px 16px;font-size:13px}
+  .hero{min-height:600px}
+  .hero .ctas{flex-direction:column}
+  .hero .ctas .btn{width:100%}
+  .pc{padding:16px 10px;gap:12px}
+  .pc[aria-pressed="true"]{padding-right:16px}
+  .pphoto{min-height:400px}
+  .pans{padding:22px}
+  .reasons{grid-template-columns:1fr;gap:20px}
+  .item{grid-template-columns:88px 1fr;padding:18px 0}
+  .item .go{display:none}
+  .item h3{font-size:24px}
+  .item p{grid-column:1/3;font-size:15px}
+  .item .thumb{grid-row:1;aspect-ratio:1}
+  .masonry{columns:2;column-gap:10px}
+  .masonry figure{margin-bottom:10px}
+  .masonry figure:nth-child(4n+1){border-radius:70px 14px 14px 14px}.masonry figure:nth-child(4n+3){border-radius:14px 14px 70px 14px}
+  .card{padding:28px 24px 24px}
+  .card h4{font-size:36px}
+  .final .ctas .btn{width:100%}
+  .wa{left:14px;bottom:14px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="gaya"><img class="lc" src="img/logo-cream.png" alt="gaya"><img class="lb" src="img/logo-brown.png" alt=""></a>
+    <ul>
+      <li><a href="#pain">מה מתאים לי</a></li>
+      <li><a href="#about">גאיה</a></li>
+      <li><a href="#treatments">טיפולים</a></li>
+      <li><a href="#gift">שובר מתנה</a></li>
+      <li><a href="#faq">שאלות</a></li>
+    </ul>
+    <a class="btn" data-wa="היי גאיה, אשמח לקבוע טיפול" href="https://wa.me/972542254120" target="_blank" rel="noopener">לקביעת טיפול</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero dark">
+  <div class="ph" aria-hidden="true">
+    <picture><source media="(max-width:700px)" srcset="img/hero-m.jpg"><img class="base" src="img/hero.jpg" alt="" fetchpriority="high"></picture>
+    <picture><source media="(max-width:700px)" srcset="img/hero-m.jpg"><img class="ghost" src="img/hero.jpg" alt=""></picture>
+  </div>
+  <div class="wrap">
+    <div>
+      <span class="label rv">Touch therapy studio · by Gaya Brandin</span>
+      <h1 class="brand rv d1"><img src="img/logo-cream.png" alt="gaya"><span>קליניקה לטיפולי מגע לנשים</span></h1>
+      <p class="lead rv d2">שיאצו, עיסוי וכוסות רוח בידיים של גאיה ברנדין. חדר שקט, אור רך ומגע שנבנה מחדש בכל טיפול, במגדל העמק.</p>
+      <div class="ctas rv d3">
+        <a class="btn btn-cream" data-wa="היי גאיה, אשמח לקבוע טיפול" href="https://wa.me/972542254120" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>
+          לקביעת טיפול
+        </a>
+        <a class="btn btn-line" href="#about">להכיר את גאיה</a>
+      </div>
+    </div>
+    <div class="side rv d3">
+      <div><b>גאיה ברנדין</b></div>
+      <div>תואר בתחום · שיאצו מוסמכת, רידמן</div>
+      <div>לימודים בסין · לנשים בלבד</div>
+    </div>
+  </div>
+</section>
+
+<section class="pain" id="pain">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="label rv">Be honest with yourself</span>
+        <h2 class="rv d1">מתי בפעם האחרונה<br>מישהו דאג לך?</h2>
+      </div>
+      <p class="lead rv d2">את דואגת לכולם, כל היום. אם משהו מכאן מרגיש לך מוכר, סמני אותו, ואגיד לך איזה טיפול הכי יתאים לך.</p>
+    </div>
+    <div class="grid">
+      <div class="cards rv" id="cards"></div>
+      <div class="pphoto rv d1" id="pphoto">
+        <img src="img/g-120.jpg" alt="" data-k="none">
+        <div class="pans" id="answer" aria-live="polite"><div class="swap"><span class="label">Your treatment</span><h3>מה הגוף שלך מבקש?</h3><p>סמני את מה שמרגיש לך מוכר, ואני אמליץ על הטיפול שיתאים לך.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="spread dark" id="about">
+  <div class="img"><img src="img/gaya.jpg" alt="גאיה ברנדין" loading="lazy" style="object-position:50% 20%"></div>
+  <div class="page">
+    <span class="label rv">Meet gaya</span>
+    <h2 class="rv d1">אני גאיה.<br>הידיים שלי יודעות להקשיב.</h2>
+    <p class="rv d1">אני בעלת תואר בתחום ובוגרת שנתיים של לימודי שיאצו במכללת רידמן. בדיוק חזרתי מלימודים בסין, שם העמקתי במגוון שיטות של מגע ורפואה סינית מסורתית, וכל מה שלמדתי נכנס לטיפול שלך.</p>
+    <p class="rv d2">פתחתי את הקליניקה כי ראיתי כמה נשים סוחבות על הכתפיים, ממש ובמובן הכי פשוט, ואף פעם לא עוצרות. רציתי מקום אחד שבו מותר לעצור.</p>
+    <div class="creds rv d2">
+      <div><b>תואר בתחום</b><small>בסיס מקצועי ואקדמי</small></div>
+      <div><b>שיאצו מוסמכת</b><small>שנתיים, מכללת רידמן</small></div>
+      <div><b>לימודים בסין</b><small>שיטות מגע ורפואה סינית</small></div>
+      <div><b>עיסוי הוליסטי</b><small>הכשרה מקצועית</small></div>
+    </div>
+    <div class="pg"><span>GAYA</span><span>01</span></div>
+  </div>
+</section>
+
+<section class="spread flip">
+  <div class="page">
+    <span class="label rv">Why women come back</span>
+    <h2 class="rv d1">כאן לא צריך להסביר,<br>להתכווץ או להתנצל.</h2>
+    <div class="reasons">
+      <div class="rv"><h3>רק נשים, תמיד</h3><p>מרחב אינטימי ובטוח, בלי מבוכה ובלי שיפוטיות. את יכולה פשוט להיות.</p></div>
+      <div class="rv d1"><h3>45 דקות בלי למהר</h3><p>לא תור על פס ייצור. הזמן הזה שלך, מההתחלה ועד הסוף.</p></div>
+      <div class="rv d2"><h3>מגע שמקשיב</h3><p>לפני כל טיפול אני שואלת ומתאימה את העוצמה והקצב בדיוק אלייך.</p></div>
+      <div class="rv d3"><h3>קרוב לבית</h3><p>לא צריך לנסוע לספא רחוק. השקט הזה מחכה לך כאן, במגדל העמק.</p></div>
+    </div>
+    <div class="pg"><span>GAYA</span><span>02</span></div>
+  </div>
+  <div class="img"><img src="img/b-145.jpg" alt="גאיה מטפלת בעדינות בראש של מטופלת" loading="lazy"></div>
+</section>
+
+<section class="treat" id="treatments">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="label rv">The treatments</span>
+        <h2 class="rv d1">מה הגוף שלך צריך?</h2>
+      </div>
+      <p class="lead rv d2">כל טיפול נמשך 45 דקות, ואפשר לשלב טכניקות לפי מה שמרגיש לך נכון באותו יום.</p>
+    </div>
+    <div class="list" id="list"></div>
+  </div>
+</section>
+
+<section class="spread dark" id="cupping">
+  <div class="img"><img src="img/cup-1.jpg" alt="כוסות רוח על גב בתאורה חמה" loading="lazy"></div>
+  <div class="page">
+    <span class="label rv">Cupping</span>
+    <h2 class="rv d1">כוסות רוח</h2>
+    <p class="rv d1">עומס, אימונים, ישיבה מול מסך או לילות בלי שינה. הכול נאסף בגב ובכתפיים והופך למתח שלא עוזב.</p>
+    <blockquote class="rv d2">כמו עיסוי, רק הפוך. במקום ללחוץ פנימה, הכוסות מושכות בעדינות כלפי מעלה ויוצרות תנועה במקום שהיה תקוע.</blockquote>
+    <div class="facts rv d3">
+      <div><b>מותאם בדיוק אלייך</b>המיקום, העוצמה והזמן נקבעים לפי הגוף שלך ולמה שהוא צריך באותו רגע.</div>
+      <div><b>ומה עם העיגולים?</b>הם תגובה טבעית של הגוף לוואקום, לא המטרה של הטיפול, ובדרך כלל חולפים תוך כמה ימים.</div>
+    </div>
+    <div class="pg"><span>GAYA</span><span>03</span></div>
+  </div>
+</section>
+
+<section class="ritual">
+  <div class="wrap">
+    <div class="head">
+      <span class="label rv">The ritual</span>
+      <h2 class="rv d1">ארבעה צעדים קטנים אל השקט</h2>
+    </div>
+    <div class="steps">
+      <div class="step rv"><div class="n">01</div><h3>שולחת הודעה</h3><p>כותבת לי בוואטסאפ מה מרגיש לך עמוס, ונמצא יחד זמן שנוח לך.</p></div>
+      <div class="step rv d1"><div class="n">02</div><h3>מגיעה ונושמת</h3><p>חדר חמים, אור רך ושקט. מכאן הקצב כבר אחר.</p></div>
+      <div class="step rv d2"><div class="n">03</div><h3>משחררת</h3><p>45 דקות של מגע ונשימה, בעוצמה שמתאימה לך.</p></div>
+      <div class="step rv d3"><div class="n">04</div><h3>חוזרת לעצמך</h3><p>יוצאת קלה יותר, עם גוף שזוכר איך להירגע.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="wrap">
+    <div class="head">
+      <span class="label rv">Inside the studio</span>
+      <h2 class="rv d1">שעה שבה אף אחד<br>לא צריך ממך כלום</h2>
+    </div>
+    <div class="masonry">
+      <figure class="rv"><img src="img/g-120.jpg" alt="מטופלת בעיניים עצומות" loading="lazy"></figure>
+      <figure class="rv d1"><img src="img/g-131.jpg" alt="עיסוי גב" loading="lazy"></figure>
+      <figure class="rv d2"><img src="img/b-128.jpg" alt="מגע עדין בפנים" loading="lazy"></figure>
+      <figure class="rv d3"><img src="img/g-037.jpg" alt="עיסוי כתפיים באור חם" loading="lazy"></figure>
+      <figure class="rv"><img src="img/cup-2.jpg" alt="כוסות רוח" loading="lazy"></figure>
+      <figure class="rv d1"><img src="img/b-043.jpg" alt="גאיה" loading="lazy"></figure>
+      <figure class="rv d2"><img src="img/hands.jpg" alt="ידיים על הגב" loading="lazy"></figure>
+      <figure class="rv d3"><img src="img/g-083.jpg" alt="טיפול בראש ובפנים" loading="lazy"></figure>
+      <figure class="rv"><img src="img/g-107.jpg" alt="עיסוי גב באור חם" loading="lazy"></figure>
+      <figure class="rv d1"><img src="img/g-049.jpg" alt="עיסוי יד" loading="lazy"></figure>
+      <figure class="rv d2"><img src="img/b-036.jpg" alt="טיפול שיאצו" loading="lazy"></figure>
+      <figure class="rv d3"><img src="img/certs.jpg" alt="התעודות של גאיה" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="gift dark" id="gift">
+  <img src="img/hands-wide.jpg" alt="" aria-hidden="true" loading="lazy">
+  <div class="wrap">
+    <div>
+      <span class="label rv">Gift card</span>
+      <h2 class="rv d1">יש מישהי שמגיע לה<br>רגע כזה?</h2>
+      <p class="lead rv d2">שעה של שקט, נשימה ופינוק אמיתי. שובר לשיאצו, לעיסוי או לכוסות רוח, עם ברכה אישית ממך.</p>
+      <div class="who rv d2" id="who"><button class="on">לאמא</button><button>לאחות</button><button>לחברה</button><button>לבת זוג</button><button>לעצמי</button></div>
+      <a class="btn btn-cream rv d3" id="giftBtn" href="https://wa.me/972542254120" target="_blank" rel="noopener">להזמנת שובר בוואטסאפ</a>
+    </div>
+    <div class="card rv d2" aria-hidden="true">
+      <div class="top"><img src="img/logo-brown.png" alt=""><span>GIFT CARD</span></div>
+      <h4>שובר מתנה</h4>
+      <div class="sub">45 דקות של רוגע ופינוק</div>
+      <div class="lines"><div>עבור <b id="forName">אמא</b></div><div>מאת</div><div>ברכה</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap grid">
+    <div>
+      <span class="label rv">Before your first visit</span>
+      <h2 class="rv d1">מה שנשים שואלות אותי לפני הטיפול הראשון</h2>
+    </div>
+    <div class="rv d1">
+      <details open>
+        <summary>איזה טיפול מתאים לי?</summary>
+        <p>אם יש אזור תפוס, עיסוי רפואי משולב או כוסות רוח. אם הראש לא מפסיק לרוץ, שיאצו. אם בא לך פשוט לשחרר, עיסוי שוודי. ואם את לא בטוחה, נחליט יחד לפני הטיפול.</p>
+      </details>
+      <details>
+        <summary>אני בהריון. אפשר?</summary>
+        <p>כן. העיסוי לנשים בהריון מותאם לתקופה, עם תנוחה נוחה ובטוחה ומגע עדין במיוחד.</p>
+      </details>
+      <details>
+        <summary>מה ללבוש ומה להביא?</summary>
+        <p>שום דבר מיוחד. לשיאצו כדאי להגיע בבגדים נוחים ורכים, ולשאר הטיפולים כל מה שצריך כבר מחכה לך בקליניקה.</p>
+      </details>
+      <details>
+        <summary>איך מזמינים שובר מתנה?</summary>
+        <p>שולחים לי הודעה בוואטסאפ, ואני מכינה שובר מעוצב עם הברכה שלך, מוכן לשליחה או להדפסה.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final dark">
+  <img src="img/g-037.jpg" alt="" aria-hidden="true" loading="lazy">
+  <div class="inner">
+    <span class="label rv">You deserve this</span>
+    <h2 class="rv d1">רגע כזה מגיע לך.<br>גם השבוע.</h2>
+    <p class="lead rv d2">שלחי הודעה, ונמצא יחד זמן שקט רק בשבילך.</p>
+    <div class="ctas rv d3">
+      <a class="btn btn-cream" data-wa="היי גאיה, אשמח לקבוע טיפול השבוע" href="https://wa.me/972542254120" target="_blank" rel="noopener">לקביעת טיפול בוואטסאפ</a>
+      <a class="btn btn-line" href="tel:+972542254120">להתקשר</a>
+    </div>
+    <div class="info rv"><a href="tel:+972542254120">054-2254120</a><span>מגדל העמק</span><span>לנשים בלבד</span></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo-cream.png" alt="gaya">
+    <span>טיפולי מגע לנשים · מגדל העמק</span>
+    <span>© 2026 גאיה ברנדין</span>
+  </div>
+</footer>
+
+<a class="wa" id="wa" data-wa="היי גאיה, אשמח לקבוע טיפול" href="https://wa.me/972542254120" target="_blank" rel="noopener" aria-label="וואטסאפ">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>
+</a>
+
+<script>
+const wa=t=>'https://wa.me/972542254120?text='+encodeURIComponent(t);
+document.querySelectorAll('[data-wa]').forEach(a=>a.href=wa(a.dataset.wa));
+
+const T={
+  shiatsu:{n:'שיאצו',img:'t-shiatsu',f:'כשהראש לא מפסיק לרוץ',d:'טיפול מגע יפני בלחיצות עדינות לאורך הגוף, שמשחרר עומסים, מאזן ומחזיר תחושת רוגע עמוקה.'},
+  swedish:{n:'עיסוי שוודי',img:'t-swedish',f:'כשבא לך פשוט לשחרר',d:'עיסוי קלאסי ומרגיע בתנועות רכות ועמוקות, לשחרור השרירים, הפחתת מתחים ותחושת קלילות בכל הגוף.'},
+  preg:{n:'עיסוי לנשים בהריון',img:'t-pregnancy',f:'כשהגוף משתנה מהר',d:'טיפול עדין ומותאם לתקופה שבה הגוף משתנה. הרפיה, שחרור עומסים ותחושת נוחות, בשכיבה בטוחה ונעימה.'},
+  medical:{n:'עיסוי רפואי משולב',img:'t-medical',f:'כשמשהו תפוס ולא עובר',d:'טיפול ממוקד שמשלב כמה טכניקות לפי הצורך, כדי להקל על אזורים תפוסים ולהחזיר לגוף תנועה טובה יותר.'},
+  cupping:{n:'כוסות רוח',img:'t-cupping',f:'כשהגב עמוס והעומס לא זז',d:'טיפול מסורתי בוואקום עדין שממריץ את זרימת הדם, משחרר עומסים ויוצר תחושת פתיחה באזור המטופל.'}
+};
+const PAINS=[
+  ['הכתפיים כבר מזמן צמודות לאוזניים','medical'],
+  ['אני נכנסת למיטה עייפה, אבל הראש ממשיך לרוץ','shiatsu'],
+  ['הגב מזכיר לי כל יום כמה אני סוחבת','cupping'],
+  ['אני בהריון והגוף משתנה מהר ממה שהספקתי להתרגל','preg'],
+  ['אני כבר לא זוכרת מתי עשיתי משהו רק בשבילי','swedish'],
+  ['כאבי ראש ועייפות שלא עוברים','shiatsu']
+];
+const cards=document.getElementById('cards'),answer=document.getElementById('answer'),pphoto=document.getElementById('pphoto');
+const tick='<span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg></span>';
+Object.values(T).forEach(t=>{const im=new Image();im.src='img/'+t.img+'.jpg';im.alt='';im.dataset.k=t.img;im.className='hide';pphoto.insertBefore(im,answer)});
+PAINS.forEach(([txt,key],i)=>{
+  const b=document.createElement('button');b.className='pc';b.dataset.k=key;b.setAttribute('aria-pressed','false');
+  b.innerHTML='<span class="num">0'+(i+1)+'</span><span class="t">'+txt+'</span>'+tick;
+  b.onclick=()=>{b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true');update()};
+  cards.appendChild(b);
+});
+function show(k){pphoto.querySelectorAll('img').forEach(im=>im.classList.toggle('hide',im.dataset.k!==k))}
+function update(){
+  const on=[...cards.querySelectorAll('[aria-pressed="true"]')];
+  if(!on.length){show('none');answer.innerHTML='<div class="swap"><span class="label">Your treatment</span><h3>מה הגוף שלך מבקש?</h3><p>סמני את מה שמרגיש לך מוכר, ואני אמליץ על הטיפול שיתאים לך.</p></div>';return}
+  const cnt={};on.forEach(b=>cnt[b.dataset.k]=(cnt[b.dataset.k]||0)+1);
+  let key=Object.keys(cnt).sort((a,b)=>cnt[b]-cnt[a])[0];
+  if(on.some(b=>b.dataset.k==='preg'))key='preg';
+  const t=T[key];show(t.img);
+  answer.innerHTML='<div class="swap"><span class="label">Recommended for you</span><h3>'+t.n+'</h3><p>'+t.d+'</p><a class="btn btn-cream" target="_blank" rel="noopener" href="'+wa('היי גאיה, אשמח לקבוע '+t.n)+'">לקבוע '+t.n+'</a></div>';
+}
+
+const list=document.getElementById('list');
+const arrow='<span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span>';
+Object.values(T).forEach(t=>{
+  const a=document.createElement('a');a.className='item rv';a.href=wa('היי גאיה, אשמח לקבוע '+t.n);a.target='_blank';a.rel='noopener';
+  a.innerHTML='<div class="thumb"><img src="img/'+t.img+'.jpg" alt="'+t.n+'" loading="lazy"></div><div><h3>'+t.n+'</h3><span class="for">'+t.f+'</span></div><p>'+t.d+'</p>'+arrow;
+  list.appendChild(a);
+});
+
+const forName=document.getElementById('forName'),giftBtn=document.getElementById('giftBtn');
+document.querySelectorAll('#who button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#who button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+  const w=b.textContent;forName.textContent=w==='לעצמי'?'עצמי':w.slice(1);
+  giftBtn.href=wa('היי גאיה, אשמח להזמין שובר מתנה '+w);
+});
+giftBtn.href=wa('היי גאיה, אשמח להזמין שובר מתנה לאמא');
+
+const nav=document.getElementById('nav'),waBtn=document.getElementById('wa');
+const onScroll=()=>{nav.classList.toggle('solid',scrollY>innerHeight*.85);waBtn.classList.toggle('on',scrollY>innerHeight*.85)};
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -5% 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
